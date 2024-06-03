@@ -117,6 +117,59 @@ services:
 		В отчете owasp-zap указаны ошибки и ссылки на уязвимости и их устранение
 	</li>
 </ol>
+<h3>Анализ образов-контейнеров</h3>
+<h4>Frontend</h4>
+<ul>
+	<li>
+		При анализе образ-контейнеров был использован <b>sonarqube Version 10.3</b>, который выявил 3 потенциальные уязвимости в dockerfile:
+		<ol>
+			<li>
+				<img src="https://github.com/Medok228/Course_work_E_Commerce/blob/main/images/image3.png">
+				<h5>Рекомендация по оптимизации:</h5>
+				<ul>
+					<li>
+						Ограничьте использование подстановок в COPY определение источников.
+					</li>
+					<li>
+						Не копируйте весь контекстный каталог в файловую систему образа.
+					</li>
+					<li>
+						Предпочитаю предоставлять явный список файлов и каталогов, которые необходимы для правильной работы образа.
+					</li>
+				</ul>
+			</li>
+			<li>
+				<img src="https://github.com/Medok228/Course_work_E_Commerce/blob/main/images/image6.png">
+			</li>
+			<li>
+				<img src="https://github.com/Medok228/Course_work_E_Commerce/blob/main/images/image11.png">
+			</li>
+		</ol>
+	</li>
+	<li>
+		При развертывании приложения через dockerfile, Node.js выдает ошибку о том что некоторые из компонентов не экспортированы:
+		<img src="https://github.com/Medok228/Course_work_E_Commerce/blob/main/images/image.png">
+	</li>
+</ul>
+<h4>Backend</h4>
+<ul>
+	<li>
+		При анализе образ-контейнеров был использован <b>sonarqube Version 10.3</b>, который выявил 2 потенциальные уязвимости в dockerfile:
+		<ol>
+			<li>
+				<img src="https://github.com/Medok228/Course_work_E_Commerce/blob/main/images/image5.png">
+			</li>
+			<li>
+				<img src="https://github.com/Medok228/Course_work_E_Commerce/blob/main/images/image4.png">
+			</li>
+		</ol>
+	</li>
+	<li>
+		При анализе с помощью <b>trivy version 0.48.0</b> не было выявлено уязвимостей
+		<img src="https://github.com/Medok228/Course_work_E_Commerce/blob/main/images/image9.png">
+	</li>
+</ul>
+
 
   
 
