@@ -63,7 +63,9 @@ services:
 <li>При статистическом анализе Frontend части был использован <b>ESLint v8.55.0</b>, которая при сканировании выявила 7 ошибок 
 <img src="https://github.com/Medok228/Course_work_E_Commerce/blob/main/images/image8.png">
   <h5>Рекомендация по оптимизации:</h5>
-	Убрать неиспользуемые параметры и объявить параметры указанные в ошибках
+	<ul>
+	<li>
+	Убрать неиспользуемые параметры и объявить параметры указанные в ошибках</li></ul>
 
 </li>
 <li>
@@ -79,7 +81,24 @@ services:
   <img src="https://github.com/Medok228/Course_work_E_Commerce/blob/main/images/image2.png">
 </li>
 <li>
-  При статистическом анализе backend части был использован <b>detekt version 1.23.4</b>, которая при сканировании выявила 63 ошибки.
+  При статистическом анализе backend части был использован <b>detekt version 1.23.4</b>, которая при сканировании выявила 63 ошибки.<br>
+  <a href="https://github.com/Medok228/Course_work_E_Commerce/blob/main/detekt%20report.html">Отчет</a>
+ <h5>Рекомендация по оптимизации:</h5>
+	<ul>
+	<li>В отчете detekt есть ссылки на описание ошибок и их устранение</li>
+	</ul>
+
+	
 </li>
-  
 </ol>
+<h3>OSA: анализ используемых библиотек</h3>
+<ol>
+	<li>
+		При анализе используемых библиотек был использован <b>dependency-check version: 9.0.3</b>,
+при его работе было выявлено 57 уязвимый зависимостей и 153 уязвимостей.<br>
+		<a href="https://github.com/Medok228/Course_work_E_Commerce/blob/main/Dependency-Check%20Report.html">Отчет</a>
+	</li>
+</ol>
+
+  
+
