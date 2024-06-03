@@ -119,7 +119,7 @@ services:
 </ol>
 <h3>Анализ образов-контейнеров</h3>
 <h4>Frontend</h4>
-<ul>
+<ol>
 	<li>
 		При анализе образ-контейнеров был использован <b>sonarqube Version 10.3</b>, который выявил 3 потенциальные уязвимости в dockerfile:
 		<ol>
@@ -134,33 +134,82 @@ services:
 						Не копируйте весь контекстный каталог в файловую систему образа.
 					</li>
 					<li>
-						Предпочитаю предоставлять явный список файлов и каталогов, которые необходимы для правильной работы образа.
+						Предпочитайте предоставлять явный список файлов и каталогов, которые необходимы для правильной работы образа.
 					</li>
 				</ul>
 			</li>
 			<li>
 				<img src="https://github.com/Medok228/Course_work_E_Commerce/blob/main/images/image6.png">
+				<h5>Рекомендация по оптимизации:</h5>
+				<ul>
+					<li>
+						Создайте нового пользователя по умолчанию и используйте его с правами user.
+					</li>
+					<li>
+						Некоторые специалисты по сопровождению контейнеров создают конкретного пользователя, который будет использоваться, не устанавливая его явно по умолчанию, например postgresql или zookeeper. Рекомендуется использовать этих пользователей вместо root.
+					</li>
+				</ul>
 			</li>
 			<li>
 				<img src="https://github.com/Medok228/Course_work_E_Commerce/blob/main/images/image11.png">
+				<h5>Рекомендация по оптимизации:</h5>
+				<ul>
+					<li>
+					Выполнение сторонних скриптов следует отключить, если это не является строго необходимым для корректной работы зависимостей. Это уменьшит атаку. выявить и заблокировать известный вектор атаки на цепочку поставок.	
+					</li>
+					<li>
+						Команды, которые подвержены этой проблеме: npm install, yarn instal lи yarn( yarn без будет выполнена явная команда install). <br>
+<a href="https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes/">анализ вредоносных пакетов</a>
+					</li>
+				</ul>
 			</li>
 		</ol>
 	</li>
 	<li>
 		При развертывании приложения через dockerfile, Node.js выдает ошибку о том что некоторые из компонентов не экспортированы:
 		<img src="https://github.com/Medok228/Course_work_E_Commerce/blob/main/images/image.png">
+		<h5>Рекомендация по оптимизации:</h5>
+		<ul>
+			<li>
+				<a href="https://stackoverflow.com/questions/69820222/err-package-path-not-exported">Ссылка на решение stackoverflow</a>
+			</li>
+			<li>
+				<a href="https://stacktuts.com/how-to-fix-error-err-package-path-not-exported-package-subpath-v4-is-not-defined-by-exports-in-node-js">Ссылка на статью stacktuts</a>
+			</li>
+		</ul>
 	</li>
-</ul>
+</ol>
 <h4>Backend</h4>
-<ul>
+<ol>
 	<li>
 		При анализе образ-контейнеров был использован <b>sonarqube Version 10.3</b>, который выявил 2 потенциальные уязвимости в dockerfile:
 		<ol>
 			<li>
 				<img src="https://github.com/Medok228/Course_work_E_Commerce/blob/main/images/image5.png">
+				<h5>Рекомендация по оптимизации:</h5>
+				<ul>
+					<li>
+						Ограничьте использование подстановок в COPY определение источников.
+					</li>
+					<li>
+						Не копируйте весь контекстный каталог в файловую систему образа.
+					</li>
+					<li>
+						Предпочитайте предоставлять явный список файлов и каталогов, которые необходимы для правильной работы образа.
+					</li>
+				</ul>
 			</li>
 			<li>
 				<img src="https://github.com/Medok228/Course_work_E_Commerce/blob/main/images/image4.png">
+				<h5>Рекомендация по оптимизации:</h5>
+				<ul>
+					<li>
+						Создайте нового пользователя по умолчанию и используйте его с правами user.
+					</li>
+					<li>
+						Некоторые специалисты по сопровождению контейнеров создают конкретного пользователя, который будет использоваться, не устанавливая его явно по умолчанию, например postgresql или zookeeper. Рекомендуется использовать этих пользователей вместо root.
+					</li>
+				</ul>
 			</li>
 		</ol>
 	</li>
@@ -168,7 +217,7 @@ services:
 		При анализе с помощью <b>trivy version 0.48.0</b> не было выявлено уязвимостей
 		<img src="https://github.com/Medok228/Course_work_E_Commerce/blob/main/images/image9.png">
 	</li>
-</ul>
+</ol>
 
 
   
